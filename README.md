@@ -37,40 +37,78 @@ Follow these simple steps to deploy and run the bot on any Pterodactyl-based gam
 
 ```env
 # ==============================================================================
-# Discord Bot Credentials
+# Fluenosity Discord Bot - Environment Configuration Template
 # ==============================================================================
-DISCORD_TOKEN=your_bot_token_here
-DISCORD_CLIENT_ID=your_application_id_here
+
+# ------------------------------------------------------------------------------
+# 1. Discord Bot Credentials
+# ------------------------------------------------------------------------------
+DISCORD_TOKEN=your_discord_bot_token_here
+DISCORD_CLIENT_ID=your_discord_application_id_here
 OWNER_ID=your_discord_user_id_here
 PREFIX=!
 LANGUAGE=default
 
-# ==============================================================================
-# Database Configuration
-# ==============================================================================
-MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/fluenosity?retryWrites=true&w=majority
+# ------------------------------------------------------------------------------
+# 2. Database Configuration
+# ------------------------------------------------------------------------------
+MONGODB_URI=mongodb://localhost:27017/fluenosity
 
-# ==============================================================================
-# Music & Audio (Spotify Track Resolution)
-# ==============================================================================
+# ------------------------------------------------------------------------------
+# 3. Validator, Backend & Dashboard Integration
+# ------------------------------------------------------------------------------
+BACKEND=https://aio.fluenosity.com
+VALIDATOR_URL=https://aio.fluenosity.com
+API_BASE_URL=https://allinone.fluenosity.com
+BOT_API=your_bot_api_key_here
+DISCORD_USER_ID=your_discord_user_id_here
+
+# Dashboard & Middleware Connection (set false to disable websocket to middleware)
+DASHBOARD_ENABLED=false
+
+# ------------------------------------------------------------------------------
+# 4. Lavalink Server Configuration (Music Audio Provider)
+# ------------------------------------------------------------------------------
+LAVALINK_ENABLED=true
+LAVALINK_HOST=de4.bot-hosting.cloud
+LAVALINK_PORT=26245
+LAVALINK_PASSWORD=glace
+LAVALINK_SECURE=false
+LAVALINK_NAME=shiva - fluenosity
+
+# ------------------------------------------------------------------------------
+# 5. Spotify & Media Integrations
+# ------------------------------------------------------------------------------
 SPOTIFY_CLIENT_ID=your_spotify_client_id_here
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
 
-# ==============================================================================
-# Optional Lavalink Server (Default public node is already configured)
-# ==============================================================================
-LAVALINK_ENABLED=true
-# LAVALINK_HOST=your_lavalink_host
-# LAVALINK_PORT=2333
-# LAVALINK_PASSWORD=your_password
-# LAVALINK_SECURE=false
+# ------------------------------------------------------------------------------
+# 6. Stream & Social Notifications
+# ------------------------------------------------------------------------------
+TWITCH_CLIENT_ID=your_twitch_client_id_here
+TWITCH_CLIENT_SECRET=your_twitch_client_secret_here
+YOUTUBE_API_KEY=your_youtube_api_key_here
+FORTNITE_API_KEY=your_fortnite_api_key_here
 
-# ==============================================================================
-# Optional Notifications (Twitch / YouTube / Socials)
-# ==============================================================================
-# TWITCH_CLIENT_ID=your_twitch_client_id
-# TWITCH_CLIENT_SECRET=your_twitch_client_secret
-# YOUTUBE_API_KEY=your_youtube_api_key
+# ------------------------------------------------------------------------------
+# 7. External Service & API Endpoint Overrides (Optional with resilient defaults)
+# ------------------------------------------------------------------------------
+POPCAT_API_URL=https://api.popcat.xyz
+LRCLIB_API_URL=https://lrclib.net
+DICTIONARY_API_URL=https://api.dictionaryapi.dev/api/v2/entries/en
+UNSPLASH_SOURCE_URL=https://source.unsplash.com/1280x720
+TWITCH_TOKEN_URL=https://id.twitch.tv/oauth2/token
+TWITCH_API_BASE_URL=https://api.twitch.tv
+
+# ------------------------------------------------------------------------------
+# 8. Operational, Metrics & Readiness Settings
+# ------------------------------------------------------------------------------
+STATUS_HOST=127.0.0.1
+STATUS_PORT=3000
+COMMAND_READY_TIMEOUT_MS=15000
+ALLOW_DEGRADED_STARTUP=false
+METRICS_AUTH_TOKEN=your_secure_random_token_here
+CACHE_VERBOSE=false
 ```
 
 ### Step 3: Configure Startup Settings
