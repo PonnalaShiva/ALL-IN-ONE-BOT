@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+*.log
+temp/
+transcripts/
+
